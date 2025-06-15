@@ -1,7 +1,17 @@
+using Finansmart.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region Configuracao do DB
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseOracle(connectionString).EnableSensitiveDataLogging(true)
+    );
+#endregion
 
 var app = builder.Build();
 
