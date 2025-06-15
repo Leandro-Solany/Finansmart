@@ -1,5 +1,4 @@
-﻿using Finansmart.Api.Controllers;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Finansmart.Models;
 
 namespace Finansmart.Data

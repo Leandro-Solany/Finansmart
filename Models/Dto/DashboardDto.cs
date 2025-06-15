@@ -2,14 +2,14 @@
 {
     public class DashboardPeriodoDto
     {
-        public decimal SaldoPeriodo { get; set; }
-        public int CursosConcluidosPeriodo { get; set; }
-        public int DesafiosConcluidosPeriodo { get; set; }
-        public int PontuacaoPeriodo { get; set; }
-        public List<string> BadgesPeriodo { get; set; }
-        public List<string> UltimosCursosPeriodo { get; set; }
-        public List<string> UltimosDesafiosPeriodo { get; set; }
-        public decimal TotalReceitas { get; set; }
-        public decimal TotalDespesas { get; set; }
+        public decimal SaldoPeriodo { get; set; } = new();
+        public int CursosConcluidosPeriodo { get; set; } = new();
+        public int DesafiosConcluidosPeriodo { get; set; } = new();
+        public int PontuacaoPeriodo { get; set; } = new();
+        public List<string> BadgesPeriodo { get; set; } 
+        public List<string> UltimosCursosPeriodo { get; set; } = new();
+        public List<string> UltimosDesafiosPeriodo { get; set; } = new();
+        public decimal TotalReceitas { get; set; } = new();
+        public decimal TotalDespesas { get; set; } = new();
     }
 }
