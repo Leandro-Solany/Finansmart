@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Finansmart.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Usuários";
+}
+
+<h2>Usuários</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Nível</th>
+            <th>Data de Cadastro</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Nome</td>
+                <td>@user.Email</td>
+                <td>@user.Status</td>
+                <td>@user.Nivel</td>
+                <td>@user.DataCadastro?.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Novo" class="btn btn-primary">Novo Usuário</a>

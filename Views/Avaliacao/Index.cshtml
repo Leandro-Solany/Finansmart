@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Finansmart.Models.Avaliacao>
+@{
+    ViewData["Title"] = "Avaliações do Curso";
+    int cursoId = (int)ViewBag.CursoId;
+}
+<h2>Avaliações do Curso</h2>
+
+<a asp-action="Nova" asp-route-cursoId="@cursoId" class="btn btn-primary">Nova Avaliação</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Nota</th>
+            <th>Comentário</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UsuarioId</td>
+                <td>@item.Nota</td>
+                <td>@item.Comentario</td>
+                <td>@item.DataAvaliacao != null ? item.DataAvaliacao.Value.ToString("dd/MM/yyyy") : "")</td>
+            </tr>
+        }
+    </tbody>
+</table>

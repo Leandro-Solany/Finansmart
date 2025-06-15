@@ -1,0 +1,30 @@
+﻿@model Finansmart.Models.Avaliacao
+@{
+    ViewData["Title"] = "Nova Avaliação";
+    int cursoId = (int)ViewBag.CursoId;
+}
+
+<h2>Nova Avaliação</h2>
+
+<form asp-action="Nova" method="post">
+    <input type="hidden" asp-for="CursoId" value="@cursoId" />
+
+    <div class="form-group">
+        <label asp-for="UsuarioId"></label>
+        <input asp-for="UsuarioId" class="form-control" />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Nota"></label>
+        <input asp-for="Nota" class="form-control" type="number" min="1" max="5" />
+        <span asp-validation-for="Nota" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Comentario"></label>
+        <textarea asp-for="Comentario" class="form-control"></textarea>
+        <span asp-validation-for="Comentario" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Enviar Avaliação</button>
+</form>
+
+<a asp-action="Index" asp-route-cursoId="@cursoId">Voltar</a>

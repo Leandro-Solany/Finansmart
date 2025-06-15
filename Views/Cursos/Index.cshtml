@@ -1,0 +1,39 @@
+﻿@model Finansmart.Models.CursosListViewModel
+
+@{
+    ViewData["Title"] = "Lista de Cursos";
+    int totalPages = (int)Math.Ceiling(Model.Total / (double)Model.PageSize);
+}
+
+<h2>Cursos Disponíveis</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Avaliação Média</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var curso in Model.Cursos)
+        {
+            <tr>
+                <td>@curso.Nome</td>
+                <td>@curso.Descricao</td>
+                <td>@curso.AvaliacaoMedia</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-page="@i" asp-route-pageSize="@Model.PageSize">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

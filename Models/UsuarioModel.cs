@@ -7,6 +7,6 @@
         public string Email { get; set; }
         public string Status { get; set; } // "Ativo", "Inativo", etc
         public string Nivel { get; set; } // "Aluno", "Mentor", "Administrador"
-        public DateTime DataCadastro { get; set; }
+        public DateTime? DataCadastro { get; set; }
     }
 }

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Finansmart.Models.Desafio>
+<h2>Desafios</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Pontuação</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.Descricao</td>
+                <td>@item.Pontuacao</td>
+                <td>@(item.Ativo ? "Ativo" : "Inativo")</td>
+            </tr>
+        }
+    </tbody>
+</table>

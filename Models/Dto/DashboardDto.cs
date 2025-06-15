@@ -1,15 +1,12 @@
 ﻿namespace Finansmart.Models
 {
-    public class DashboardPeriodoDto
+    public class DashboardViewModel
     {
-        public decimal SaldoPeriodo { get; set; } = new();
-        public int CursosConcluidosPeriodo { get; set; } = new();
-        public int DesafiosConcluidosPeriodo { get; set; } = new();
-        public int PontuacaoPeriodo { get; set; } = new();
-        public List<string> BadgesPeriodo { get; set; } 
-        public List<string> UltimosCursosPeriodo { get; set; } = new();
-        public List<string> UltimosDesafiosPeriodo { get; set; } = new();
-        public decimal TotalReceitas { get; set; } = new();
-        public decimal TotalDespesas { get; set; } = new();
+        public int UsuarioId { get; set; }
+        public decimal Saldo { get; set; }
+        public decimal Receitas { get; set; }
+        public decimal Despesas { get; set; }
+        public int CursosConcluidos { get; set; }
+        public int DesafiosConcluidos { get; set; }
     }
 }

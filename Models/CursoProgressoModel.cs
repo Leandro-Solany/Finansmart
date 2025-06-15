@@ -1,9 +1,6 @@
-﻿
-namespace Finansmart.Models
+﻿namespace Finansmart.Models
 {
-    public class CursoProgressoModel;
-
-        public class CursoProgresso
+    public class CursoProgresso
     {
         public int CursoId { get; set; }
         public int UsuarioId { get; set; }

@@ -1,10 +1,12 @@
-﻿namespace Finansmart.Models
+﻿using System.Collections.Generic;
+
+namespace Finansmart.Models
 {
-    public class Curso
+    public class CursosListViewModel
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public decimal AvaliacaoMedia { get; set; }
+        public List<Curso> Cursos { get; set; }
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+        public int Total { get; set; }
     }
 }

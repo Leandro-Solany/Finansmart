@@ -1,18 +1,20 @@
 using Finansmart.Data;
 using Microsoft.EntityFrameworkCore;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
 #region Configuracao do DB
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseOracle(connectionString).EnableSensitiveDataLogging(true)
     );
 #endregion
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
