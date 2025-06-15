@@ -1,4 +1,5 @@
-﻿namespace Finansmart.Models
+﻿
+namespace Finansmart.Models
 {
     public class CursoProgressoModel;
 
@@ -9,5 +10,6 @@
         public double PercentualConcluido { get; set; }
         public string ModulosCompletos { get; set; }
         public string Badges { get; set; }
+        public DateTime? DataConclusao { get; internal set; }
     }
 }

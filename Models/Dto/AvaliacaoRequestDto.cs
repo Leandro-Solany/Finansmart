@@ -1,6 +1,5 @@
 ﻿namespace Finansmart.Api.Models
 {
-    public class AvaliacaoRequestDto;
         public class AvaliacaoRequest
 
     {

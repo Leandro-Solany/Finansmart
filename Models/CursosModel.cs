@@ -1,7 +1,5 @@
 ﻿namespace Finansmart.Models
 {
-    public class CursosModel;
-
     public class Curso
     {
         public int Id { get; set; }
