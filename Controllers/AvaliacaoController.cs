@@ -17,7 +17,6 @@ namespace Finansmart.Controllers
             _context = context;
         }
 
-        // Lista avaliações de um curso
         public async Task<IActionResult> Index(int cursoId)
         {
             var avaliacoes = await _context.Avaliacoes
@@ -28,8 +27,7 @@ namespace Finansmart.Controllers
             ViewBag.CursoId = cursoId;
             return View(avaliacoes);
         }
-
-        // Exibe formulário para nova avaliação
+       
         [HttpGet]
         public IActionResult Nova(int cursoId)
         {
@@ -37,7 +35,6 @@ namespace Finansmart.Controllers
             return View();
         }
 
-        // Recebe e salva a avaliação via formulário
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Nova(Avaliacao model)
