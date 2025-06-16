@@ -29,11 +29,6 @@ namespace Finansmart.Controllers
             return View(avaliacoes);
         }
 
-        public async Task Index()
-        {
-            throw new NotImplementedException();
-        }
-
         // Exibe formulário para nova avaliação
         [HttpGet]
         public IActionResult Nova(int cursoId)
