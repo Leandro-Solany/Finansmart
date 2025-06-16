@@ -12,7 +12,6 @@ public class DashboardController : Controller
         _context = context;
     }
 
-    // GET: /Dashboard
     public async Task<IActionResult> Index()
     {
         var viewModel = new DashboardViewModel

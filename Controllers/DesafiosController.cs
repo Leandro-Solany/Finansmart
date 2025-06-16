@@ -15,7 +15,6 @@ namespace Finansmart.Controllers
             _context = context;
         }
 
-        // GET: /Desafios
         public async Task<IActionResult> Index()
         {
             var desafios = await _context.Desafios.ToListAsync();
