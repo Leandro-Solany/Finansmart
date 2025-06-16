@@ -19,37 +19,33 @@ namespace Finansmart.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Chave composta para CursoProgresso
             modelBuilder.Entity<CursoProgresso>()
                 .HasKey(cp => new { cp.CursoId, cp.UsuarioId });
 
-            // Decimal de precisão para AvaliacaoMedia do Curso
             modelBuilder.Entity<Curso>()
                 .Property(c => c.AvaliacaoMedia)
                 .HasPrecision(10, 2);
 
-            // Decimal de precisão para Valor em MovimentacaoFinanceira
             modelBuilder.Entity<MovimentacaoFinanceira>()
                 .Property(mf => mf.Valor)
                 .HasPrecision(12, 2);
 
-            // Campos booleanos tratados como NUMBER(1)
+            // REMOVA HasConversion<int>() nesses casos:
+            // Apenas defina o tipo da coluna, se quiser garantir no banco:
             modelBuilder.Entity<Desafio>()
                 .Property(d => d.Ativo)
-                .HasConversion<int>() // bool <-> int (0/1)
                 .HasColumnType("NUMBER(1)");
 
             modelBuilder.Entity<DesafioUsuario>()
                 .Property(du => du.Concluido)
-                .HasConversion<int>() // bool <-> int (0/1)
                 .HasColumnType("NUMBER(1)");
 
             modelBuilder.Entity<MovimentacaoFinanceira>()
                 .Property(mf => mf.Receita)
-                .HasConversion<int>() // bool <-> int (0/1)
                 .HasColumnType("NUMBER(1)");
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
