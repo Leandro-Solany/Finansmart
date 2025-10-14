@@ -5,7 +5,6 @@ on:
     branches:
       - main
       - master
-      - feature/*
   pull_request:
     branches:
       - main
@@ -30,15 +29,6 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
-    - name: Display repository structure
-      run: |
-        echo "=== Repository Root ==="
-        pwd
-        ls -la
-        echo ""
-        echo "=== Looking for .csproj and .sln files ==="
-        find . -name "*.csproj" -o -name "*.sln" | head -20
-        
     - name: Restore dependencies
       run: dotnet restore Finansmart.csproj
       working-directory: ./
@@ -53,7 +43,7 @@ jobs:
           echo "Running tests..."
           dotnet test ../Finansmart.Tests/Finansmart.Tests.csproj --configuration Release --verbosity normal
         else
-          echo "No test project found at ../Finansmart.Tests/, skipping tests"
+          echo "No test project found, skipping tests"
         fi
       working-directory: ./
       continue-on-error: true
@@ -61,11 +51,6 @@ jobs:
     - name: Publish application
       run: dotnet publish Finansmart.csproj -c Release -o ${{ github.workspace }}/${{ env.AZURE_WEBAPP_PACKAGE_PATH }} --no-build
       working-directory: ./
-      
-    - name: Verify publish output
-      run: |
-        echo "=== Published files ==="
-        ls -la ${{ github.workspace }}/${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Upload artifact for deployment
       uses: actions/upload-artifact@v4
