@@ -1,0 +1,4 @@
+-- Healthcheck script para Oracle
+SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF
+SELECT 'OK' FROM dual;
+EXIT;

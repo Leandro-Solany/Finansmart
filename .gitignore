@@ -42,14 +42,6 @@ Generated\ Files/
 TestResult.xml
 nunit-*.xml
 
-# Build Results of an ATL Project
-[Dd]ebugPS/
-[Rr]eleasePS/
-dlldata.c
-
-# Benchmark Results
-BenchmarkDotNet.Artifacts/
-
 # .NET Core
 project.lock.json
 project.fragment.lock.json
@@ -117,3 +109,16 @@ publish/
 coverage/
 *.coverage
 *.coveragexml
+
+# Docker
+.env
+.env.local
+docker-compose.override.yml
+*.dmp
+backup_*.dmp
+logs/
+
+# SSL Certificates
+nginx/ssl/*.pem
+nginx/ssl/*.key
+nginx/ssl/*.crt
