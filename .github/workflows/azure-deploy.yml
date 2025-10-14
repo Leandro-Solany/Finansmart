@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - master
-      - feature/*  # Adicionada verificação para branches de recursos
+      - feature/*
   pull_request:
     branches:
       - main
@@ -30,42 +30,42 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
-    - name: List directory structure
+    - name: Display repository structure
       run: |
-        echo "Current directory:"
+        echo "=== Repository Root ==="
         pwd
-        echo "Directory contents:"
         ls -la
-        echo "Looking for .sln files:"
-        find . -name "*.sln" -o -name "*.csproj" | head -20
+        echo ""
+        echo "=== Looking for .csproj and .sln files ==="
+        find . -name "*.csproj" -o -name "*.sln" | head -20
         
     - name: Restore dependencies
-      run: |
-        if [ -f "Finansmart.sln" ]; then
-          dotnet restore Finansmart.sln
-        else
-          dotnet restore Finansmart.csproj
-        fi
+      run: dotnet restore Finansmart.csproj
+      working-directory: ./
       
-    - name: Build
-      run: |
-        if [ -f "Finansmart.sln" ]; then
-          dotnet build Finansmart.sln --configuration Release --no-restore
-        else
-          dotnet build Finansmart.csproj --configuration Release --no-restore
-        fi
+    - name: Build project
+      run: dotnet build Finansmart.csproj --configuration Release --no-restore
+      working-directory: ./
       
-    - name: Run tests
+    - name: Run tests (if available)
       run: |
-        if [ -d "../Finansmart.Tests" ]; then
-          dotnet test ../Finansmart.Tests/Finansmart.Tests.csproj --configuration Release --no-build --verbosity normal
+        if [ -f "../Finansmart.Tests/Finansmart.Tests.csproj" ]; then
+          echo "Running tests..."
+          dotnet test ../Finansmart.Tests/Finansmart.Tests.csproj --configuration Release --verbosity normal
         else
-          echo "Tests project not found, skipping tests..."
+          echo "No test project found at ../Finansmart.Tests/, skipping tests"
         fi
+      working-directory: ./
       continue-on-error: true
       
-    - name: Publish
-      run: dotnet publish Finansmart.csproj -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }} --no-build
+    - name: Publish application
+      run: dotnet publish Finansmart.csproj -c Release -o ${{ github.workspace }}/${{ env.AZURE_WEBAPP_PACKAGE_PATH }} --no-build
+      working-directory: ./
+      
+    - name: Verify publish output
+      run: |
+        echo "=== Published files ==="
+        ls -la ${{ github.workspace }}/${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Upload artifact for deployment
       uses: actions/upload-artifact@v4

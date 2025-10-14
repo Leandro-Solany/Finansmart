@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finansmart", "Finansmart.csproj", "{FE09E867-FFFF-4E70-BD61-0FC9C9EBDD2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finansmart.Tests", "..\Finansmart.Tests\Finansmart.Tests.csproj", "{C6810C3F-06A4-4BFF-9B77-7538B729C9D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE09E867-FFFF-4E70-BD61-0FC9C9EBDD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE09E867-FFFF-4E70-BD61-0FC9C9EBDD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE09E867-FFFF-4E70-BD61-0FC9C9EBDD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE09E867-FFFF-4E70-BD61-0FC9C9EBDD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6810C3F-06A4-4BFF-9B77-7538B729C9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6810C3F-06A4-4BFF-9B77-7538B729C9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6810C3F-06A4-4BFF-9B77-7538B729C9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6810C3F-06A4-4BFF-9B77-7538B729C9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4934B994-E217-4C65-86F8-E13E297C4CE5}
+	EndGlobalSection
+EndGlobal
