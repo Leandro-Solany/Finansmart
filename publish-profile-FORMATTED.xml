@@ -1,0 +1,11 @@
+<publishData>
+  <publishProfile profileName="finansmart-app - Web Deploy" publishMethod="MSDeploy" publishUrl="finansmart-app-g0cgecb4e7hudahy.scm.brazilsouth-01.azurewebsites.net:443" msdeploySite="finansmart-app" userName="$finansmart-app" userPWD="ig5jzajuyFzc8TkiklQSaPT9JmN6H39Cg2m0GN2qHXYn6m6K9ZafmJNTvJ5w" destinationAppUrl="https://finansmart-app-g0cgecb4e7hudahy.brazilsouth-01.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites">
+    <databases />
+  </publishProfile>
+  <publishProfile profileName="finansmart-app - FTP" publishMethod="FTP" publishUrl="ftps://waws-prod-cq1-055.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="finansmart-app\$finansmart-app" userPWD="ig5jzajuyFzc8TkiklQSaPT9JmN6H39Cg2m0GN2qHXYn6m6K9ZafmJNTvJ5w" destinationAppUrl="https://finansmart-app-g0cgecb4e7hudahy.brazilsouth-01.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites">
+    <databases />
+  </publishProfile>
+  <publishProfile profileName="finansmart-app - Zip Deploy" publishMethod="ZipDeploy" publishUrl="finansmart-app-g0cgecb4e7hudahy.scm.brazilsouth-01.azurewebsites.net:443" userName="$finansmart-app" userPWD="ig5jzajuyFzc8TkiklQSaPT9JmN6H39Cg2m0GN2qHXYn6m6K9ZafmJNTvJ5w" destinationAppUrl="https://finansmart-app-g0cgecb4e7hudahy.brazilsouth-01.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites">
+    <databases />
+  </publishProfile>
+</publishData>
