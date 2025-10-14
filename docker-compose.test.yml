@@ -1,0 +1,22 @@
+version: '3.8'
+
+# Docker Compose para TESTES
+# Uso: docker-compose -f docker-compose.yml -f docker-compose.test.yml up --abort-on-container-exit
+
+services:
+  finansmart-app:
+    command: dotnet test --logger "console;verbosity=detailed"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Testing
+    depends_on:
+      - oracle-db-test
+
+  oracle-db-test:
+    image: container-registry.oracle.com/database/express:21.3.0-xe
+    container_name: finansmart-oracle-test
+    environment:
+      - ORACLE_PWD=TestPassword123
+    tmpfs:
+      - /opt/oracle/oradata
+    networks:
+      - finansmart-network
